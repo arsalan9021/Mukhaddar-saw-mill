@@ -1,10 +1,91 @@
-<html>
-  <head>
-    <title>
-      Mukhaddar saw mill
-    </title>
-  </head>
-  <body>
-    <h1>Mukhaddar saw mill</h1>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mukhaddar Saw Mill - Home</title>
+    <style>
+        :root {
+            --primary: #8B4513;
+            --primary-dark: #5a2d0c;
+            --bg-light: #fdfaf6;
+            --bg-card: #ffffff;
+            --text-main: #2d221a;
+            --text-muted: #66554b;
+            --border-color: #ebdcd0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
+        
+        header { background: #fff; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--border-color); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 24px; font-weight: bold; color: var(--primary); display: flex; align-items: center; gap: 8px; }
+        nav a { text-decoration: none; color: var(--text-muted); margin-left: 22px; font-weight: 500; font-size: 15px; padding: 6px 12px; border-radius: 4px; transition: all 0.3s ease; }
+        nav a:hover, nav a.active { color: var(--primary); background: #fdf3eb; font-weight: bold; }
+
+        main { max-width: 1200px; margin: 45px auto; padding: 0 20px; min-height: 70vh; }
+        
+        /* Premium Animations */
+        .animate-fade-in { animation: professionalFade 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+        .animate-slide-up { animation: elegantSlideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; animation-delay: 0.15s; }
+        
+        @keyframes professionalFade { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes elegantSlideUp { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
+
+        nav a, .btn-primary, .feature-card { transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
+        .feature-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(139, 69, 19, 0.1); border-color: var(--primary); }
+
+        /* Mukhaddar Saw Mill Background Hero */
+        .hero-banner { 
+            background: linear-gradient(rgba(45, 34, 26, 0.75), rgba(90, 45, 12, 0.8)), 
+                        url('https://unsplash.com') center/cover no-repeat; 
+            color: #ffffff; padding: 110px 30px; text-align: center; border-radius: 14px; margin-bottom: 45px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+        }
+        .hero-banner h1 { font-size: 42px; margin-bottom: 18px; font-weight: 800; }
+        .hero-banner p { font-size: 18px; max-width: 700px; margin: 0 auto 25px auto; color: #f5efe9; }
+        .btn-primary { display: inline-block; background-color: #e67e22; color: #fff; padding: 12px 28px; text-decoration: none; border-radius: 6px; font-weight: bold; border: none; cursor: pointer; }
+        .btn-primary:hover { background-color: #d35400; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(230, 126, 34, 0.4); }
+        
+        .intro-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 40px; }
+        .feature-card { background: var(--bg-card); padding: 30px; border-radius: 10px; border: 1px solid var(--border-color); border-top: 4px solid var(--primary); }
+        
+        footer { background-color: #261910; color: #e7ded7; text-align: center; padding: 30px; margin-top: 80px; font-size: 14px; border-top: 3px solid var(--primary); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">🪵 Mukhaddar Saw Mill</div>
+        <nav aria-label="Main Navigation">
+            <a href="index.html" class="active">Home</a>
+            <a href="products.html">Products</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="calculator.html">Rates & Calculator</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+    <main class="animate-fade-in">
+        <section class="hero-banner">
+            <h1>Mukhaddar Saw Mill</h1>
+            <p>Premium quality wood cutting, high-end finishing, and industrial timber supply tailored precisely for your residential and commercial builds.</p>
+            <a href="products.html" class="btn-primary">Explore Products</a>
+        </section>
+        <h2 style="text-align:center; margin-bottom:35px; color:var(--primary-dark);" class="animate-slide-up">Core Processing Excellence</h2>
+        <div class="intro-features animate-slide-up">
+            <article class="feature-card">
+                <h3>Advanced Band Sawing</h3>
+                <p style="margin-top: 10px; color: var(--text-muted);">High-precision heavy log slicing layout utilizing specialized modern automated blades for custom architectural orders.</p>
+            </article>
+            <article class="feature-card">
+                <h3>Sizing & Planing Finish</h3>
+                <p style="margin-top: 10px; color: var(--text-muted);">Smooth industrial sanding and planing treatments to transform structural heavy raw timber logs into perfectly clean boards.</p>
+            </article>
+            <article class="feature-card">
+                <h3>Bulk Logistics Supply</h3>
+                <p style="margin-top: 10px; color: var(--text-muted);">Direct reliable deliveries to contractors and manufacturing setups straight from our facility yard in Parbhani location.</p>
+            </article>
+        </div>
+    </main>
+    <footer><p>© 2026 Mukhaddar Saw Mill. All Rights Reserved. Built with Semantic Layout Standards.</p></footer>
+</body>
 </html>

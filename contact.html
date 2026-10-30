@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mukhaddar Saw Mill - Contact</title>
+    <style>
+        :root { --primary: #8B4513; --primary-dark: #5a2d0c; --bg-light: #fdfaf6; --border-color: #ebdcd0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--bg-light); }
+        header { background: #fff; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--border-color); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 24px; font-weight: bold; color: var(--primary); }
+        nav a { text-decoration: none; color: #66554b; margin-left: 22px; font-weight: 500; padding: 6px 12px; border-radius: 4px; transition: all 0.3s ease; }
+        nav a:hover, nav a.active { color: var(--primary); background: #fdf3eb; font-weight: bold; }
+        
+        main { max-width: 1200px; margin: 45px auto; padding: 0 20px; }
+        .animate-fade-in { animation: professionalFade 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+        .animate-slide-up { animation: elegantSlideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; animation-delay: 0.15s; }
+        @keyframes professionalFade { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes elegantSlideUp { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
+
+        .contact-container { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 30px; }
+        .contact-form-block { background: #fff; padding: 30px; border-radius: 12px; flex: 1.5; min-width: 330px; border: 1px solid var(--border-color); }
+        .contact-sidebar { flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 20px; }
+        .sidebar-card { background: #fff; padding: 22px; border-radius: 8px; border: 1px solid var(--border-color); border-left: 5px solid var(--primary); transition: all 0.4s ease; }
+        .sidebar-card:hover { transform: translateX(5px); }
+        input, textarea { width: 100%; padding: 12px; margin-top:8px; margin-bottom: 15px; border: 1px solid #dcd1c4; border-radius: 6px; }
+        footer { background-color: #261910; color: #e7ded7; text-align: center; padding: 30px; margin-top: 80px; font-size: 14px; border-top: 3px solid var(--primary); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">🪵 Mukhaddar Saw Mill</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="calculator.html">Rates & Calculator</a>
+            <a href="contact.html" class="active">Contact Us</a>
+        </nav>
+    </header>
+    <main class="animate-fade-in">
+        <h2 style="text-align:center; color: var(--primary-dark);">Connect With Our Team</h2>
+        <div class="contact-container animate-slide-up">
+            <form class="contact-form-block" onsubmit="event.preventDefault(); alert('Message Sent Successfully!');">
+                <label>Full Name</label><input type="text" placeholder="Enter name" required>
+                <label>Email Address</label><input type="email" placeholder="Enter email" required>
+                <label>Requirements</label><textarea rows="4" placeholder="Your Message..." required></textarea>
+                <button type="submit" style="background:#8B4513; color:#fff; border:none; padding:12px 25px; font-weight:bold; border-radius:6px; cursor:pointer;">Submit Inquiry</button>
+            </form>
+            <div class="contact-sidebar">
+                <aside class="sidebar-card"><h4>📞 Hotline Contact</h4><p style="color:#66554b; margin-top:5px;">+91 (373) 223-3780</p></aside>
+                <aside class="sidebar-card"><h4>✉️ Email Support</h4><p style="color:#66554b; margin-top:5px;">aaramill@ramachine.com</p></aside>
+                <aside class="sidebar-card"><h4>📍 Factory Location</h4><p style="color:#66554b; margin-top:5px;">New Mondha, Near Kawa Road, Parbhani, Maharashtra - 431401</p></aside>
+            </div>
+        </div>
+    </main>
+    <footer><p>© 2026 Mukhaddar Saw Mill. All Rights Reserved.</p></footer>
+</body>
+</html>

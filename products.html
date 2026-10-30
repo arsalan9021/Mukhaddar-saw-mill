@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mukhaddar Saw Mill - Products</title>
+    <style>
+        :root {
+            --primary: #8B4513;
+            --primary-dark: #5a2d0c;
+            --bg-light: #fdfaf6;
+            --bg-card: #ffffff;
+            --text-main: #2d221a;
+            --text-muted: #66554b;
+            --border-color: #ebdcd0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-main); }
+        
+        header { background: #fff; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--border-color); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 24px; font-weight: bold; color: var(--primary); }
+        nav a { text-decoration: none; color: var(--text-muted); margin-left: 22px; font-weight: 500; font-size: 15px; padding: 6px 12px; border-radius: 4px; transition: all 0.3s ease; }
+        nav a:hover, nav a.active { color: var(--primary); background: #fdf3eb; font-weight: bold; }
+
+        main { max-width: 1200px; margin: 45px auto; padding: 0 20px; }
+        
+        /* Premium Animations */
+        .animate-fade-in { animation: professionalFade 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+        .animate-slide-up { animation: elegantSlideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; animation-delay: 0.15s; }
+        
+        @keyframes professionalFade { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes elegantSlideUp { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
+
+        .product-card { transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
+        .product-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(139, 69, 19, 0.12); border-color: var(--primary); }
+
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 30px; }
+        .product-card { background: var(--bg-card); border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); display: flex; flex-direction: column; }
+        .product-card img { width: 100%; height: 215px; object-fit: cover; }
+        .product-content { padding: 22px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .product-tag { background: #fdf3eb; color: var(--primary); display: inline-block; padding: 4px 12px; font-size: 12px; font-weight: bold; border-radius: 4px; margin-bottom: 12px; width: fit-content; text-transform: uppercase; }
+        .product-content h3 { color: var(--primary-dark); font-size: 20px; margin-bottom: 10px; }
+        .product-content p { color: var(--text-muted); font-size: 14px; margin-bottom: 20px; }
+        .product-price { color: var(--primary); font-size: 18px; font-weight: bold; border-top: 1px dashed var(--border-color); padding-top: 12px; }
+
+        footer { background-color: #261910; color: #e7ded7; text-align: center; padding: 30px; margin-top: 80px; font-size: 14px; border-top: 3px solid var(--primary); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">🪵 Mukhaddar Saw Mill</div>
+        <nav aria-label="Main Navigation">
+            <a href="index.html">Home</a>
+            <a href="products.html" class="active">Products</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="calculator.html">Rates & Calculator</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+    <main class="animate-fade-in">
+        <h2 style="text-align:center; color: var(--primary-dark); font-size: 34px; position:relative; padding-bottom:12px;">Premium Timber & Wood Collections</h2>
+        <div class="product-grid animate-slide-up">
+            <!-- Product 1 -->
+            <article class="product-card">
+                <img src="https://unsplash.com" alt="Teak Wood">
+                <div class="product-content">
+                    <div><span class="product-tag">Luxury Grade</span><h3>Teak Wood (Sagwan)</h3><p>Naturally water-resistant, oil-rich wood that prevents rotting. Excellent choice for high-end luxury furniture.</p></div>
+                    <div class="product-price">Price: ₹1,200 / CFT</div>
+                </div>
+            </article>
+            <!-- Product 2 -->
+            <article class="product-card">
+                <img src="https://unsplash.com" alt="Pine Wood">
+                <div class="product-content">
+                    <div><span class="product-tag">Construction Base</span><h3>Pine Wood Planks</h3><p>Clean, lightweight, and versatile slats. The ideal solution for concrete centering and framing.</p></div>
+                    <div class="product-price">Price: ₹850 / CFT</div>
+                </div>
+            </article>
+            <!-- Product 3 -->
+            <article class="product-card">
+                <img src="https://unsplash.com" alt="Sal Wood">
+                <div class="product-content">
+                    <div><span class="product-tag">Heavy Structural</span><h3>Sal Wood Blocks</h3><p>Immensely strong timber with heavy load capacity. Highly preferred for main entry door frame layouts.</p></div>
+                    <div class="product-price">Price: ₹950 / CFT</div>
+                </div>
+            </article>
+            <!-- Product 4 -->
+            <article class="product-card">
+                <img src="https://unsplash.com" alt="Mahogany Wood">
+                <div class="product-content">
+                    <div><span class="product-tag">Premium Furniture</span><h3>Mahogany Sawn Timber</h3><p>Features a deep reddish-brown tone with beautiful grains. Carves seamlessly, perfect for cabinetry.</p></div>
+                    <div class="product-price">Price: ₹1,100 / CFT</div>
+                </div>
+            </article>
+            <!-- Product 5 -->
+            <article class="product-card">
+                <img src="https://unsplash.com" alt="Walnut Wood">
+                <div class="product-content">
+                    <div><span class="product-tag">Decorative Finish</span><h3>Walnut Wood Slabs</h3><p>Rich dark brown aesthetic with robust impact resistance. Perfect for high-grade decorative table tops.</p></div>
+                    <div class="product-price">Price: ₹1,350 / CFT</div>
+                </div>
+            </article>
+        </div>
+    </main>
+    <footer><p>© 2026 Mukhaddar Saw Mill. All Rights Reserved.</p></footer>
+</body>
+</html>

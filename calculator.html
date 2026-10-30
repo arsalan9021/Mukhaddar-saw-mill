@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mukhaddar Saw Mill - Calculator</title>
+    <style>
+        :root { --primary: #8B4513; --primary-dark: #5a2d0c; --bg-light: #fdfaf6; --border-color: #ebdcd0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--bg-light); }
+        header { background: #fff; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--border-color); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 24px; font-weight: bold; color: var(--primary); }
+        nav a { text-decoration: none; color: #66554b; margin-left: 22px; font-weight: 500; padding: 6px 12px; border-radius: 4px; transition: all 0.3s ease; }
+        nav a:hover, nav a.active { color: var(--primary); background: #fdf3eb; font-weight: bold; }
+        
+        main { max-width: 1200px; margin: 45px auto; padding: 0 20px; }
+        .animate-fade-in { animation: professionalFade 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+        .animate-slide-up { animation: elegantSlideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; animation-delay: 0.15s; }
+        @keyframes professionalFade { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes elegantSlideUp { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
+
+        .calculator-container { display: flex; flex-wrap: wrap; gap: 30px; margin-top:30px; }
+        .calc-box, .rates-box { background: #fff; padding: 30px; border-radius: 12px; flex: 1; min-width: 330px; border: 1px solid var(--border-color); }
+        .input-group { margin-bottom: 18px; }
+        .input-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--primary-dark); }
+        .input-row { display: flex; gap: 15px; }
+        .input-row .input-group { flex: 1; }
+        input, select { width: 100%; padding: 12px; border: 1px solid #dcd1c4; border-radius: 6px; }
+        .rates-table { width: 100%; border-collapse: collapse; }
+        .rates-table th, .rates-table td { padding: 14px 15px; text-align: left; border-bottom: 1px solid var(--border-color); }
+        .rates-table th { color: var(--primary); background: #fdf6ee; }
+        .result-panel { margin-top: 20px; padding: 15px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; display: none; color: #166534; font-weight: bold; }
+        footer { background-color: #261910; color: #e7ded7; text-align: center; padding: 30px; margin-top: 80px; font-size: 14px; border-top: 3px solid var(--primary); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">🪵 Mukhaddar Saw Mill</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="calculator.html" class="active">Rates & Calculator</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+    <main class="animate-fade-in">
+        <h2 style="text-align:center; color: var(--primary-dark);">Timber Cost & Volume Estimator</h2>
+        <div class="calculator-container animate-slide-up">
+            <div class="calc-box">
+                <h3>CFT Calculator</h3>
+                <div class="input-row" style="margin-top: 15px;">
+                    <div class="input-group"><label>Length (ft)</label><input type="number" id="length" placeholder="Feet"></div>
+                    <div class="input-group"><label>Width (in)</label><input type="number" id="width" placeholder="Inches"></div>
+                </div>
+                <div class="input-group"><label>Thickness (in)</label><input type="number" id="thickness" placeholder="Inches"></div>
+                <div class="input-group"><label>Total Quantity</label><input type="number" id="quantity" value="1"></div>
+                <div class="input-group">
+                    <label>Wood Selection</label>
+                    <select id="woodType">
+                        <option value="1200">Teak Wood - ₹1,200/CFT</option>
+                        <option value="850">Pine Wood - ₹850/CFT</option>
+                        <option value="950">Sal Wood - ₹950/CFT</option>
+                        <option value="1100">Mahogany Wood - ₹1,100/CFT</option>
+                        <option value="1350">Walnut Wood - ₹1,350/CFT</option>
+                    </select>
+                </div>
+                <button onclick="calculateCFT()" style="width:100%; background:#8B4513; color:#fff; border:none; padding:12px; font-weight:bold; border-radius:6px; cursor:pointer; margin-top:10px;">Calculate Total Bill</button>
+                <div class="result-panel" id="resultDisplay"></div>
+            </div>
+            <div class="rates-box">
+                <h3>Today's Price List</h3>
+                <table class="rates-table" style="margin-top: 15px;">
+                    <thead><tr><th>Timber Breed</th><th>Base Value / CFT</th></tr></thead>
+                    <tbody>
+                        <tr><td>Teak Wood (Sagwan)</td><td>₹1,200</td></tr>
+                        <tr><td>Pine Wood</td><td>₹850</td></tr>
+                        <tr><td>Sal Wood</td><td>₹950</td></tr>
+                        <tr><td>Mahogany Wood</td><td>₹1,100</td></tr>
+                        <tr><td>Walnut Wood</td><td>₹1,350</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <script>
+        function calculateCFT() {
+            let length = parseFloat(document.getElementById('length').value);
+            let width = parseFloat(document.getElementById('width').value);
+            let thickness = parseFloat(document.getElementById('thickness').value);
+            let qty = parseInt(document.getElementById('quantity').value) || 1;
+            let rate = parseFloat(document.getElementById('woodType').value);
+            if(!length || !width || !thickness) { alert("Kripya dimensions fill karein!"); return; }
+            let singleCFT = (length * width * thickness) / 144;
+            let totalCFT = singleCFT * qty;
+            let totalAmount = totalCFT * rate;
+            let resultDisplay = document.getElementById('resultDisplay');
+            resultDisplay.style.display = "block";
+            resultDisplay.innerHTML = `Total Volume: ${totalCFT.toFixed(2)} CFT <br>Estimated Total: ₹${totalAmount.toLocaleString('en-IN')}/-`;
+        }
+    </script>
+</body>
+</html>
